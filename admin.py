@@ -15,8 +15,9 @@ class Admin:
         self.phone[len(phone_id)]=p
         print('添加成功')
     def show_all(self):
+        print('序号\t品牌\t型号\t价格\t数量\t版本')
         for i,j in self.phone.items():
-            print(i,j.brand,j.model,j.price,j.count,j.version)
+            print('{:^4}\t{:^3}\t{:^4}\t{:^4}\t{:^4}\t{:^4}'.format(i,j.brand,j.model,j.price,j.count,j.version))
     def update(self):
         while True:
             bh=int(input('请输入您要修改信息的手机编号'))
@@ -53,10 +54,11 @@ class Admin:
         pp=input(('请输入您要查询的品牌'))
         for i in self.phone.values():
             if i.brand==pp:
-                print( i.brand, i.model, i.price, i.count, i.version)
+                print('品牌\t型号\t价格\t数量\t版本')
+                print('{:^3}\t{:^4}\t{:^4}\t{:^4}\t{:^4}'.format(i.brand, i.model, i.price, i.count, i.version))
             else:
                 print('没有此品牌')
-format('序号/t品牌/t型号')
+
 
 
 
